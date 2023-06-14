@@ -28,7 +28,7 @@
 }
 
 .card {
-  flex: 1 1 300px; /* Establece el tamaño deseado para los contenedores */
+  flex: 1 1 300px; 
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;

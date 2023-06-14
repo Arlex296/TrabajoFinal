@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import '../Estyles/Productos.Module.css'
 
-import Estylos from '../Estyles/Productos.Module.css';
-import TotalProductos from './TotalProductos';
+
+
 
 const Productos = () => {
   const [productos, setProductos] = useState([]);
@@ -15,10 +16,10 @@ const Productos = () => {
         const resultado = await fetch(url);
         const respuesta = await resultado.json();
         setProductos(respuesta);
-        setCargando(false); // Marcamos la carga como completada
+        setCargando(false); 
       } catch (error) {
         console.log(error);
-        setCargando(false); // Marcamos la carga como completada incluso en caso de error
+        setCargando(false); 
       }
     };
 
@@ -26,30 +27,20 @@ const Productos = () => {
   }, []);
 
   return (
+    
     <div>
-      <h1>Productos</h1>
-      
-      <TotalProductos total={productos.length} />
-     
-      {cargando ? (
-        <div>Cargando...</div>
-      ) : (
-        <div
-          className="card-body"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(1, 1fr)',
-            gap: '10px',
-            border: '5px',
-            alignItems: 'center',
-          }}
-        >
-          {productos.map((prod) => (
-            <ProductoCard key={prod.id} producto={prod} />
-          ))}
-        </div>
-      )}
-    </div>
+    <h1>Productossss</h1>
+
+    {cargando ? (
+      <div className="Cargando">Cargando...</div>
+    ) : (
+      <div className="ProductosContainer">
+        {productos.map((prod) => (
+          <ProductoCard key={prod.id} producto={prod} />
+        ))}
+      </div>
+    )}
+  </div>
   );
 };
 
@@ -57,7 +48,7 @@ const ProductoCard = ({ producto }) => {
   const { id, image, title, description, price, category } = producto;
 
   return (
-    <div className="card" style={{ width: '18rem' }}>
+    <div className="card" >
       <p className="card-text">{id}</p>
       <img src={image} className="Imagen" alt="..." />
       <div className="card-body">

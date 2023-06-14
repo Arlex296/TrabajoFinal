@@ -2,20 +2,22 @@
 
 import './App.css'
 import Productos from './assets/Modulos/Productos'
-//import ProductoCard from './ProductoCard'
-//import TotalProductos from './assets/Modulos/TotalProductos'
+
 
 import { Flex, Tabs, TabList, Tab, TabPanels, TabPanel } from '@chakra-ui/react';
 
-//import PedidoRealizados from "./PedidosRealizados";
-//import TotalProductos from "./TotalProductos";
-//import IngresosTotales from "./IngresosTotales";
-//import PromedioProductos from "./PromedioProductos";
-//import ProductosVendidos from "./ProductosVendidos";
-//import NroPedidosRealizados from "./NroPedidosRealizado";
+
 
 import React from 'react';
 import TotalProductos from './assets/Modulos/TotalProductos';
+
+import NroPedidosRealizados from './assets/Modulos/NroPedidosRealizados';
+import IngresosTotales from './assets/Modulos/IngresosTotales';
+import PromedioProductos from './assets/Modulos/PromedioProductos';
+import ProductosVendidos from './assets/Modulos/ProductosVendidos';
+import Filtros from './assets/Modulos/Filtros';
+import ProductoCard from './assets/Modulos/ProductoCard';
+
 
 function MyComponent() {
   return (
@@ -31,36 +33,42 @@ function MyComponent() {
     >
       <Tabs>
         <TabList style={{ display: 'flex', justifyContent: 'space-evenly', marginBottom: '1rem' }}>
-          <Tab style={{ background: '#20c99a', fontStyle: 'italic', padding: '0.5rem 1rem' }}>Productos</Tab>
-          <Tab style={{ background: '#20c99a', fontStyle: 'italic', padding: '0.5rem 1rem' }}>Pedidos realizados</Tab>
-          <Tab style={{ background: '#20c99a', fontStyle: 'italic', padding: '0.5rem 1rem' }}>Total de productos</Tab>
-          <Tab style={{ background: '#20c99a', fontStyle: 'italic', padding: '0.5rem 1rem' }}>Pedidos realizados</Tab>
-          <Tab style={{ background: '#20c99a', fontStyle: 'italic', padding: '0.5rem 1rem' }}>Ingresos totales</Tab>
-          <Tab style={{ background: '#20c99a', fontStyle: 'italic', padding: '0.5rem 1rem' }}>Promedio de productos</Tab>
-          <Tab style={{ background: '#20c99a', fontStyle: 'italic', padding: '0.5rem 1rem' }}>Productos más vendidos</Tab>
+       
+          <Tab style={{ background: '#20c99a', fontStyle: 'italic', padding: '0.5rem 1rem' , fontSize: '12px'}}>Productos</Tab>
+          <Tab style={{ background: '#20c99a', fontStyle: 'italic', padding: '0.5rem 1rem' , fontSize: '12px'}}>Pedidos</Tab>
+          <Tab style={{ background: '#20c99a', fontStyle: 'italic', padding: '0.5rem 1rem' , fontSize: '12px'}}>Total productos</Tab>
+          <Tab style={{ background: '#20c99a', fontStyle: 'italic', padding: '0.5rem 1rem' , fontSize: '12px'}}>Total pedidos </Tab>
+          <Tab style={{ background: '#20c99a', fontStyle: 'italic', padding: '0.5rem 1rem' , fontSize: '12px'}}>Ingresos totales</Tab>
+          <Tab style={{ background: '#20c99a', fontStyle: 'italic', padding: '0.5rem 1rem' , fontSize: '12px'}}>Promedio productos</Tab>
+          <Tab style={{ background: '#20c99a', fontStyle: 'italic', padding: '0.5rem 1rem' , fontSize: '12px'}}>Productos más vendidos</Tab>
+          <Tab style={{ background: '#20c99a', fontStyle: 'italic', padding: '0.5rem 1rem' , fontSize: '12px'}}>Filtros</Tab>
         </TabList>
 
         <TabPanels>
+       
           <TabPanel>
             <Productos /> 
           </TabPanel>
           <TabPanel>
-           <p>ddddd</p>
+          <ProductoCard/>
           </TabPanel>
           <TabPanel>
           <TotalProductos/>
           </TabPanel>
           <TabPanel>
-          <p>rgrrr</p>
+          <NroPedidosRealizados/>
           </TabPanel>
           <TabPanel>
-          <p>rgrrr</p> 
+          <IngresosTotales/> 
           </TabPanel>
           <TabPanel>
-          <p>rgrrr</p>
+          <PromedioProductos/>
           </TabPanel>
           <TabPanel>
-          <p>rgrrr</p>
+          <ProductosVendidos/>
+          </TabPanel>
+          <TabPanel>
+          <Filtros/>
           </TabPanel>
         </TabPanels>
       </Tabs>
